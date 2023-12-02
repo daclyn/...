@@ -125,7 +125,7 @@ function actionPlayer() {
                     else addItem('key',1)
     
                     var c = Math.random(), item = treasure_chances.find(x => c < x[1])
-                    addItem(item[0],(o.weight[item[0]]^(10),true," from treasure! ("+formatPercent(item[2])+" chance)"+(item[2]<1e-3?" <b class='yellow'>LEGENDARY ITEM!!!</b>":""))
+                    addItem(item[0],(o.weight[item[0]],true," from treasure! ("+formatPercent(item[2])+" chance)"+(item[2]<1e-3?" <b class='yellow'>LEGENDARY ITEM!!!</b>":""))
 
                     player.opened++
                 break;
@@ -214,7 +214,7 @@ function createObject(type,x,y,config={}) {
             data.damage = (data.health = data.max_health = Decimal.pow(1.1,lvl-1).mul(5+(lvl-1)*2).round()).div(10).round().max(1)
         break
         case 'treasure':
-            var lvl = world_init.level + Math.random()**2*5
+            var lvl = world_init.level + Math.random()**2**5
             var w = Decimal.pow(1.1,lvl-1).mul(lvl)
             data.weight = {}
             WORLD_GENERATION[world_init.type].config.treasure_weight.forEach(([i,c,a]) => {data.weight[i] = LUNAR_ITEMS[i].type == "items" ? 1 : w.mul(a??1).round().max(1)})
