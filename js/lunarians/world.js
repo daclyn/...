@@ -215,9 +215,9 @@ function createObject(type,x,y,config={}) {
         break
         case 'treasure':
             var lvl = world_init.level + Math.random()*10**2**5
-            var w = Decimal.pow(1.1,lvl).mul(lvl).mul(lvl)
+            var w = Decimal.pow(1.5, Decimal.pow(1.5,lvl).mul(Decimal.pow(1.5,lvl.mul(lvl)))
             data.weight = {}
-            WORLD_GENERATION[world_init.type].config.treasure_weight.forEach(([i,c,a]) => {data.weight[i] = LUNAR_ITEMS[i].type == "items" ? 1 : w.mul(a??1).round().max(1)})
+            WORLD_GENERATION[world_init.type].config.treasure_weight.forEach(([i,c,a]) => {data.weight[i] = LUNAR_ITEMS[i].type == "items" ? 1 : w.mul(a??1).round()})
         break
         case 'heal':
             data.percent = 0.25 + (Math.random()-0.5)*0.1
