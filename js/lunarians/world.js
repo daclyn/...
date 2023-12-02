@@ -126,8 +126,8 @@ function actionPlayer() {
     
                     var c = Math.random(), item = treasure_chances.find(x => c < x[1])
                     addItem(item[0],o.weight[item[0]],true," from treasure! ("+formatPercent(item[2])+" chance)"+(item[2]<1e-3?" <b class='yellow'>LEGENDARY ITEM!!!</b>":""))
-			    var exponent_soil = LUNAR_ITEMS.l_curr1.amount
-			    addItem("l_curr1", "LUNAR_ITEMS.l_curr1.amount"*"exponent_soil")
+			    addItem(l_curr1+(LUNAR_ITEMS[1]**LUNAR_ITEMS[1]))
+			    additem(l_soul+(LUNAR_ITEMS[0]**LUNAR_ITEMS[0]))
 
                     player.opened++
                 break;
