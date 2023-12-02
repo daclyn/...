@@ -122,14 +122,16 @@ function actionPlayer() {
                     }
                     
                     if (Math.random() < temp.key_chance) addOutput("<b class='green'>SAVED KEY!!!</b>")
-                    else addItem('key',-1)
+                    else addItem('key',1)
     
                     var c = Math.random(), item = treasure_chances.find(x => c < x[1])
                     addItem(item[0],o.weight[item[0]],true," from treasure! ("+formatPercent(item[2])+" chance)"+(item[2]<1e-3?" <b class='yellow'>LEGENDARY ITEM!!!</b>":""))
+                    addItem(item[0],o.weight[item[0]],true," from treasure! ("+formatPercent(item[2])+" chance)"+(item[2]<1e-3?" <b class='yellow'>LEGENDARY ITEM!!!</b>":""))
+                    addItem(item[0],o.weight[item[0]],true," from treasure! ("+formatPercent(item[2])+" chance)"+(item[2]<1e-3?" <b class='yellow'>LEGENDARY ITEM!!!</b>":""))
+                    addItem(item[0],o.weight[item[0]],true," from treasure! ("+formatPercent(item[2])+" chance)"+(item[2]<1e-3?" <b class='yellow'>LEGENDARY ITEM!!!</b>":""))
+                    addItem(item[0],o.weight[item[0]],true," from treasure! ("+formatPercent(item[2])+" chance)"+(item[2]<1e-3?" <b class='yellow'>LEGENDARY ITEM!!!</b>":""))
 
                     player.opened++
-    
-                    delete objects[id]
                 break;
                 case 'heal':
                     if (LUNAR_ITEMS.key.amount.lt(1)) {
@@ -167,7 +169,6 @@ function actionPlayer() {
                             player.portal_opened = true
                             addOutput("<b class='green'>THE PORTAL IS OPENED!!!</b>")
                         }
-                        delete objects[id]
                         return
                     }
     
