@@ -214,7 +214,7 @@ function createObject(type,x,y,config={}) {
             data.damage = (data.health = data.max_health = Decimal.pow(1.1,lvl-1).mul(5+(lvl-1)*2).round()).div(10).round().max(1)
         break
         case 'treasure':
-            var lvl = world_init.level + Math.random()**2*5
+            var lvl = world_init.level + Math.random()**2**5
             var w = Decimal.pow(1.1,lvl-1).mul(lvl)
             data.weight = {}
             WORLD_GENERATION[world_init.type].config.treasure_weight.forEach(([i,c,a]) => {data.weight[i] = LUNAR_ITEMS[i].type == "items" ? 1 : w.mul(a??1).round().max(1)})
