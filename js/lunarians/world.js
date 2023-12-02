@@ -125,7 +125,7 @@ function actionPlayer() {
                     else addItem('key',1)
     
                     var c = Math.random(), item = treasure_chances.find(x => c < x[1])
-                    addItem(item[0],o.weight[item[0]],true," from treasure! ("+formatPercent(item[2])+" chance)"+(item[2]<1e-3?" <b class='yellow'>LEGENDARY ITEM!!!</b>":""))^(item[0],o.weight[item[0]],true," from treasure! ("+formatPercent(item[2])+" chance)"+(item[2]<1e-3?" <b class='yellow'>LEGENDARY ITEM!!!</b>":""))
+                    addItem((item[0],o.weight[item[0]],true," from treasure! ("+formatPercent(item[2])+" chance)"+(item[2]<1e-3?" <b class='yellow'>LEGENDARY ITEM!!!</b>":""))*100)^5
 
                     player.opened++
                 break;
